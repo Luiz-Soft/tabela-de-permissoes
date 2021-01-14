@@ -1,6 +1,9 @@
 import React,{useState} from "react";
 import CheckBox from "../CheckBox";
 import { useEffect } from "react";
+import "../../styles/global.css";
+
+
 
 interface AnaliseProps extends React.InputHTMLAttributes<HTMLInputElement>{   
     clickMe?:()=>void;
@@ -49,11 +52,11 @@ interface AnaliseProps extends React.InputHTMLAttributes<HTMLInputElement>{
     }
     
 
-    const [markAllAnalise1, setMarkAllAnalise1] = useState(false); //listagem column
-    const [markAllAnalise2, setMarkAllAnalise2] = useState(false); //detalhes column
-    const [markAllAnalise3, setMarkAllAnalise3] = useState(false);     //criar column
+    const [markAllAnalise1, setMarkAllAnalise1] = useState(false);  //listagem column
+    const [markAllAnalise2, setMarkAllAnalise2] = useState(false);  //detalhes column
+    const [markAllAnalise3, setMarkAllAnalise3] = useState(false);  //criar column
     const [markAllAnalise4, setMarkAllAnalise4] = useState(false);  //editar column
-    const [markAllAnalise5, setMarkAllAnalise5] = useState(false); //deletar column
+    const [markAllAnalise5, setMarkAllAnalise5] = useState(false);  //deletar column
     
     const [markAnaliseDeContas1, setMarkAnaliseDeContas1] = useState(false);
     const [markAnaliseDeContas2, setMarkAnaliseDeContas2] = useState(false);
@@ -129,7 +132,7 @@ interface AnaliseProps extends React.InputHTMLAttributes<HTMLInputElement>{
     }
 
     function uncheckAllColumn5(){
-        props.setMarkedGeneralColumn5(false);
+        props.setMarkedGeneralColumn5(false)
         setMarkAllAnalise5(false);
         setMarkAnaliseDeContas5(false);
         setMarkAnaliseDeTransacoes5(false);
@@ -139,7 +142,7 @@ interface AnaliseProps extends React.InputHTMLAttributes<HTMLInputElement>{
     return(
         
    <div onClick={()=>clickMe} >
-    <header>
+    <header className="header-line">
     
     <CheckBox marked={markAllAnalise1} clickMe={markAllAnalise1?uncheckAllColumn1:checkAllColumn1} name="listagem_todos"/>
     <CheckBox marked={markAllAnalise2} clickMe={markAllAnalise2?uncheckAllColumn2:checkAllColumn2} name="detalhes_todos"/>
@@ -149,7 +152,7 @@ interface AnaliseProps extends React.InputHTMLAttributes<HTMLInputElement>{
     </header>
     
     
-    <div>
+    <div className="line">
     <CheckBox  marked={markAnaliseDeContas1} clickMe={()=>{setMarkAnaliseDeContas1(!markAnaliseDeContas1);setMarkAllAnalise1(false);props.setMarkedGeneralColumn1(false);}} name="analise_de_contas1"/>
     <CheckBox  marked={markAnaliseDeContas2} clickMe={()=>{setMarkAnaliseDeContas2(!markAnaliseDeContas2);setMarkAllAnalise2(false);props.setMarkedGeneralColumn2(false);}} name="analise_de_contas2"/>
     <CheckBox  marked={markAnaliseDeContas3} clickMe={()=>{setMarkAnaliseDeContas3(!markAnaliseDeContas3);setMarkAllAnalise3(false);props.setMarkedGeneralColumn3(false);}} name="analise_de_contas3"/>
@@ -157,7 +160,7 @@ interface AnaliseProps extends React.InputHTMLAttributes<HTMLInputElement>{
     <CheckBox  marked={markAnaliseDeContas5} clickMe={()=>{setMarkAnaliseDeContas5(!markAnaliseDeContas5);setMarkAllAnalise5(false);props.setMarkedGeneralColumn5(false);}} name="analise_de_contas5"/>
     </div>
    
-    <div>
+    <div className="line">
     <CheckBox  marked={markAnaliseDeTransacoes1} clickMe={()=>{setMarkAnaliseDeTransacoes1(!markAnaliseDeTransacoes1);setMarkAllAnalise1(false);props.setMarkedGeneralColumn1(false);}} name="analise_de_transacoes1"/>
     <CheckBox  marked={markAnaliseDeTransacoes2} clickMe={()=>{setMarkAnaliseDeTransacoes2(!markAnaliseDeTransacoes2);setMarkAllAnalise2(false);props.setMarkedGeneralColumn2(false);}} name="analise_de_transacoes2"/>
     <CheckBox  marked={markAnaliseDeTransacoes3} clickMe={()=>{setMarkAnaliseDeTransacoes3(!markAnaliseDeTransacoes3);setMarkAllAnalise3(false);props.setMarkedGeneralColumn3(false);}} name="analise_de_transacoes3"/>

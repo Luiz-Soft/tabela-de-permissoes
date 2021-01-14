@@ -49,6 +49,7 @@ export default function PermissionsTable(){
      markedGeneralColumn3={MarkGeneralColumn3} setMarkedGeneralColumn3={setGeneralColumn3}
      markedGeneralColumn4={MarkGeneralColumn4} setMarkedGeneralColumn4={setGeneralColumn4} 
      markedGeneralColumn5={MarkGeneralColumn5} setMarkedGeneralColumn5={setGeneralColumn5} />     
-     </div>   
+     </div>  
+      
    )
 }

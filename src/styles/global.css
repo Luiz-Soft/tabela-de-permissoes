@@ -1,0 +1,17 @@
+.line{
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+
+}
+
+.header-line{
+    display: flex;
+    top: 100000px;
+    background: #F1EFEF;
+
+    align-items: center;
+    
+    justify-content: center;
+  
+}

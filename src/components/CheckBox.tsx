@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../styles/components/checkbox.css"
 
 interface checkBoxProps extends React.InputHTMLAttributes<HTMLInputElement>{
   name: string;
@@ -18,7 +18,7 @@ const Checkbox = React.forwardRef<HTMLInputElement, checkBoxProps>((props) => {
 
 
   return (    
-    <input 
+    <input  className="checkbox"
       type="checkbox" 
   
       checked={props.marked}   
