@@ -1,0 +1,28 @@
+.line{
+    width: 900px;
+    display: flex;
+    top: 100000px;
+    background: #FFFFFF;
+    align-items: space-between;
+    justify-content: center;
+    padding-bottom: 15px;
+}
+
+.line-label{
+    position: relative;
+    font-family: roboto-regular;
+    color:black;
+
+}
+
+
+.header-line{
+    width: 900px;
+    display: flex;
+    top: 100000px;
+    background: #F8F8F8;
+    align-items: space-between;
+    justify-content: center;
+    padding-bottom: 15px;
+    
+}

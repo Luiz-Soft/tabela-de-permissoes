@@ -8,8 +8,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         
-        
-          <PermissionsTable/>
+        <PermissionsTable/>
+          {/*<PermissionsTable colunas="5" sections=[{ name:"Analise", rows:["cpmtas","transa"u]}] />*/}
        
       </header>
     </div>

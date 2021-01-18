@@ -1,28 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/components/checkbox.css"
 
 interface checkBoxProps extends React.InputHTMLAttributes<HTMLInputElement>{
-  name: string;
+  
   marked:boolean;
-  clickMe?:()=>void;
+  click?:(marked:boolean)=>void;
 }
 
-const Checkbox = React.forwardRef<HTMLInputElement, checkBoxProps>((props) => {
-  
+const Checkbox = React.forwardRef<HTMLInputElement, checkBoxProps>(({click,marked,...props}) => {
+   const [isMarked,setMarked]=useState(marked);
   
   function clickMe (){
-    if(props.clickMe){
-    props.clickMe()}
-    
+
+    setMarked(!isMarked);
+    if(click){
+      click(isMarked);
+    }
 }
 
 
   return (    
     <input  className="checkbox"
       type="checkbox" 
-  
-      checked={props.marked}   
-      name={props.name} 
+
+
+
+      checked={isMarked}   
+       
       onChange={() => clickMe ()}
     ></input>
   );
